@@ -1,97 +1,97 @@
 # Data Cleaning with Python (Pandas)
 
 ## Project Overview
-This project demonstrates how to clean real-world datasets using **Python**, **Pandas**, and **NumPy**. Two datasets were cleaned by identifying missing values, invalid values, duplicates, and inconsistent data, then exporting the cleaned datasets as new CSV files.
+
+This project demonstrates data cleaning techniques using **Python**, **Pandas**, and **NumPy**. Two datasets, **sales.csv** and **students.csv**, were cleaned by handling missing values, correcting invalid data, removing duplicates, and exporting the cleaned datasets.
 
 ## Technologies Used
+
 - Python 3
 - Pandas
 - NumPy
 
+---
+
 ## Project Structure
 
 ```
-Data_Cleaning/
-│── Cleaning_data/
-│   ├── sales.csv
-│   └── students.csv
-│
+Cleaning_data/
+│── README.md
+│── sales.csv
+│── students.csv
 │── sales_cleaning.py
 │── students_cleaning.py
-│
-│── Sales_data_Cleaning.csv
-│── Student_data_cleaned.csv
-│
-└── README.md
+│── sales_data_cleaned.csv
+└── student_data_cleaned.csv
 ```
 
 ---
 
-# Dataset 1: Sales Data Cleaning
+# Sales Dataset Cleaning
 
-### Cleaning Tasks Performed
+### Cleaning Steps
 
 - Loaded the dataset using Pandas.
 - Checked for invalid values.
 - Replaced:
-  - Negative Quantity values with NaN.
-  - Negative UnitPrice values with NaN.
-  - Invalid Month names with NaN.
+  - Negative values in **Quantity** with `NaN`.
+  - Negative values in **UnitPrice** with `NaN`.
+  - Invalid month names with `NaN`.
 - Filled missing values:
-  - Month → "Unknown"
-  - Product → "Unknown"
-  - Quantity → Mean value
-  - UnitPrice → Median value
-- Recalculated the **TotalSales** column:
+  - **Month** → `"Unknown"`
+  - **Product** → `"Unknown"`
+  - **Quantity** → Mean value
+  - **UnitPrice** → Median value
+- Recalculated the **TotalSales** column using:
 
 ```
 TotalSales = Quantity × UnitPrice
 ```
 
-- Exported the cleaned dataset as:
+- Saved the cleaned dataset as:
 
 ```
-Sales_data_Cleaning.csv
+sales_data_cleaned.csv
 ```
 
 ---
 
-# Dataset 2: Student Data Cleaning
+# Student Dataset Cleaning
 
-### Cleaning Tasks Performed
+### Cleaning Steps
 
 - Converted the **Physics** column to numeric values.
-- Converted invalid values to NaN.
-- Checked for invalid data:
+- Converted invalid values to `NaN`.
+- Checked for invalid values:
   - Age less than 0 or greater than 100
   - StudyHours less than 0 or greater than 24
   - Attendance less than 0 or greater than 100
-  - Math marks outside 0–100
-- Replaced invalid values with NaN.
+  - Math scores outside the range of 0–100
+- Replaced invalid values with `NaN`.
 - Filled missing values:
-  - Name → "Unknown"
-  - Gender → "No Gender"
-  - Department → "Chemistry"
-  - Age → Mean
-  - StudyHours → Median
-  - Attendance → Mean
-  - Math → Median
-  - Physics → Median
-  - Programming → Median
-- Calculated the Average score:
+  - **Name** → `"Unknown"`
+  - **Gender** → `"No Gender"`
+  - **Department** → `"Chemistry"`
+  - **Age** → Mean value
+  - **StudyHours** → Median value
+  - **Attendance** → Mean value
+  - **Math** → Median value
+  - **Physics** → Median value
+  - **Programming** → Median value
+- Calculated the **Average** score using:
 
 ```
 Average = (Math + Physics + Programming) / 3
 ```
 
-- Standardized Gender values:
-  - Male → M
-  - X → No Gender
+- Standardized gender values:
+  - `"Male"` → `"M"`
+  - `"X"` → `"No Gender"`
 - Removed duplicate records.
-- Exported the cleaned dataset as:
+- Saved the cleaned dataset as:
 
 ```
-Student_data_cleaned.csv
+student_data_cleaned.csv
 ```
 
 ---
@@ -102,13 +102,13 @@ This project demonstrates how to:
 
 - Read CSV files using Pandas.
 - Detect missing values.
-- Detect invalid values.
-- Replace invalid values with NaN.
-- Fill missing values using mean, median, or text values.
+- Detect invalid data.
+- Replace invalid values with `NaN`.
+- Fill missing values using the mean, median, or text values.
 - Standardize categorical data.
 - Remove duplicate records.
-- Create new calculated columns.
-- Export cleaned datasets.
+- Create calculated columns.
+- Export cleaned datasets as CSV files.
 
 ---
 
@@ -130,14 +130,14 @@ python sales_cleaning.py
 python students_cleaning.py
 ```
 
-The cleaned CSV files will be generated automatically.
+The cleaned datasets will be generated automatically in the project folder.
 
 ---
 
 # Output Files
 
-- `Sales_data_Cleaning.csv`
-- `Student_data_cleaned.csv`
+- `sales_data_cleaned.csv`
+- `student_data_cleaned.csv`
 
 ---
 
