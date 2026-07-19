@@ -37,4 +37,4 @@ df["TotalSales"] = df["Quantity"] * df["UnitPrice"]
 
 print(df.to_string())
 
-df.to_csv("Sales_datas_cleaned.csv", index=False)
+df.to_csv("1.csv", index=False)
